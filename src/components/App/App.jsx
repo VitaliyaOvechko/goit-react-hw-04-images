@@ -59,7 +59,11 @@ export default function App() {
       })
       .catch(error => setError({ error }))
       .finally(() => setLoading(false));
-  }, [inputValue]);
+  }, [inputValue, page]);
+
+  const handleLoadMore = () => {
+    setPage(prevPage => prevPage + 1);
+  };
 
   const showButton = images.length >= 12;
 
@@ -70,7 +74,7 @@ export default function App() {
       {loading && <Loader />}
 
       <ImageGallery inputValue={inputValue} images={images} />
-      {/* {showButton && page < totalPage && <Button onClick={handleLoadMore} />} */}
+      {showButton && page < totalPage && <Button onClick={handleLoadMore} />}
       <ToastContainer autoClose={3000} />
     </AppContainer>
   );
