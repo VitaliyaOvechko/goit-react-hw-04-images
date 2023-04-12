@@ -54,7 +54,7 @@ export default function App() {
           );
         }
         const pages = Math.ceil(data.totalHits / perPage);
-        setImages([...images, ...data.hits]);
+        setImages(prevState => [...prevState, ...data.hits]);
         setTotalPage(pages);
       })
       .catch(error => setError({ error }))
