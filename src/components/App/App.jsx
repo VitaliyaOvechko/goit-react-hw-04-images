@@ -31,7 +31,7 @@ export default function App() {
     }
     setLoading(true);
     fetch(
-      `https://pixabay.com/api/?key=33743757-4b01b593e911c90aef060a87e&q=${inputValue}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=${perPage}`
+      `https://pixabay.com/api/?key=33743757-4b01b593e911c90aef060a87e&q=${inputValue}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=12`
     )
       .then(response => {
         if (response.ok) {
