@@ -15,7 +15,6 @@ export default function App() {
   const [inputValue, setInputValue] = useState('');
   const [images, setImages] = useState([]);
   const [page, setPage] = useState(1);
-  const [perPage, setPerPage] = useState(12);
   const [totalPage, setTotalPage] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -53,7 +52,7 @@ export default function App() {
             }
           );
         }
-        const pages = Math.ceil(data.totalHits / perPage);
+        const pages = Math.ceil(data.totalHits / 12);
         setImages(prevState => [...prevState, ...data.hits]);
         setTotalPage(pages);
       })
