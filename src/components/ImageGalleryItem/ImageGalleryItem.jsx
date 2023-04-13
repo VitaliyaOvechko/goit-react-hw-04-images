@@ -22,7 +22,7 @@ export default function ImageGalleryItem({
       <ItemImg src={webformatURL} alt={tags} onClick={handleOpenModal} />
       {showModal && (
         <Modal onClose={handleCloseModal}>
-          <img src={largeImageURL} alt={tags}></img>
+          <img src={largeImageURL} alt={tags} />
         </Modal>
       )}
     </GalleryItem>
